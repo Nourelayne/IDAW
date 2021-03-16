@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="projects-styles.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" 
+    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <script src="test.js"></script>
+    <title>Portfolio</title>
+</head>
+<body>
+    <nav>
+        <div class="toggle">
+            <div class="menu"><i class="fa fa-bars" aria-hidden = "true"></i></div>
+        </div>
+        <ul>
+            <div class="title">Portfolio</div>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="cv.html">CV</a></li>
+            <li id="currentpage"><a href="projects.html">Projects</a></li>
+        </ul>
+        
+    </nav>
+    <article>
+        <div class="app1">
+            <div class="app1_img">
+                <img src="Images & Logos\app1.JPG">
+            </div>
+          <div class="app1_description">
+              <h2 style="color: #2F2FA2">Weather App</h2>
+              <p>
+                  L'une de mes premières applications avec le stack HTML & CSS et Javascript.
+                  C'est une application qui te permet d'avoir des informations sur la météo 
+                  de votre région comme la température et le temps qu'il fait.
+                  <strong>Technologies utilisées:</strong> HTML & CSS, JavaScript, OpenWeather API.
+              </p>
+          </div>
+        </div>
+       
+        <div class="app2">
+            <div class="app2_img">
+              <img src="Images & Logos\app2.gif">
+            </div>
+          <div class="app2_description">
+            <h2 style="color: #2F2FA2">Music App</h2>
+            Ceci est ma première application utilisant Flutter pour un projet scolaire, 
+            c'est une application de musique simple avec des fonctionnalités comme 
+            rechercher ou aimer une musique, mais il y a encore beaucoup de choses 
+            à ajouter pour rendre cette application bien meilleure et plus complexe.
+            <strong>Technologies utilisées:</strong> Flutter.
+          </div>
+        </div>
+       
+        <div class="app3">
+            <div class="app3_img">
+              <img src="Images & Logos\app3.JPG">
+            </div>
+          <div class="app3_description">
+            <h2 style="color: #2F2FA2">Todo List App</h2>
+            Une application Todo List Simple qui te permet d'ajouter des tâches qui doivent être accompli prochainement, 
+            et les supprimer une fois fini.
+            <strong>Technologies utilisées:</strong> HTML & CSS, Vanilla JavaScript.
+          </div>
+        </div>
+    </article>
+    <footer class="footer">
+        <div class="footer-col">
+                    <h4>Follow me on :</h4>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/salah.nourelayne.1/"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/salahnourelayne/?hl=fr"><i class="fab fa-instagram"></i></a>
+                        <a href="https://github.com/Nourelayne"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/salah-nourelayne/"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+        </div>
+   </footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script>
+         $(document).ready(function(){
+             $('.menu').click(function(){
+                 $('ul').toggleClass('active');
+             })
+         })
+    </script>
+</body>
+</html>

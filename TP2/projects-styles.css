@@ -1,0 +1,130 @@
+.article{
+   
+    margin: 10px;
+    max-width: 100%;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+}
+
+.article .app1{
+ 
+    height: 33%;
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.article .app2{
+   
+    height: 33%;
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.article .app3{
+   
+    height: 33%;
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+.article .app1 .app1_img{
+ 
+    margin: 10px;
+    width: 30%;
+}
+
+.article .app1 .app1_img img{
+    max-width:100%;
+    max-height:100%;
+    object-fit:cover;
+}
+
+.article .app2 .app2_img img{
+    max-width:100%;
+    max-height:100%;
+    object-fit: contain;
+    margin: 0px 80px;
+    border: 2px solid #2F2FA2;
+}
+
+.article .app1 .app1_description{
+    margin: 10px;
+    width: 80%;
+    text-align: justify;
+}
+
+.article .app2 .app2_img{
+    margin: 10px;
+    width: 30%;
+}
+
+.article .app2 .app2_description{
+    margin: 10px;
+    width: 80%;
+    text-align: justify;
+}
+
+.article .app3 .app3_img{
+    margin: 10px;
+    width: 40%;
+}
+
+.article .app3 .app3_img img{
+    max-width:100%;
+    max-height:100%;
+    object-fit:fill;
+}
+
+.article .app3 .app3_description{
+    margin: 10px;
+    width: 60%;
+    text-align: justify;
+}
+
+hr{
+    color:#2F2FA2;
+    width: 100%; 
+    height: 4px; 
+    border: 1px solid #2F2FA2;
+}
+
+@media(max-width: 858px){
+    .article .app1{
+       height: auto;
+       flex-direction: column;
+    }
+
+    .article .app2{
+        height: auto;
+       flex-direction: column;
+    }
+
+    .article .app3{
+        height: auto;
+        flex-direction: column;
+    }
+
+    .article .app1 .app1_img{
+       width: 100%;
+    }
+
+    .article .app1 .app1_description{
+        width: 100%;
+    }
+
+    .article .app3 .app3_img{
+        width: 100%;
+     }
+ 
+     .article .app3 .app3_description{
+         width: 100%;
+     }
+}
