@@ -1,11 +1,3 @@
-<?php
-require_once('template_header.php');
-?>
-
-<?php
-    require_once('template_menu.php');
-    renderMenuToHTML('projects');
-?>
 <article class="article">
     <div class="app1">
         <div class="app1_img">
@@ -48,17 +40,3 @@ require_once('template_header.php');
         </div>
     </div>
 </article>
-<?php
-   require_once('template_footer.php');
-?>
-<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-<script>
-    $(document).ready(function() {
-        $('.menu').click(function() {
-            $('ul').toggleClass('active');
-        })
-    })
-</script>
-</body>
-
-</html>

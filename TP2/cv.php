@@ -1,11 +1,3 @@
-<?php
-   require_once('template_header.php');
-?>
-
-<?php
-   require_once('template_menu.php');
-   renderMenuToHTML('cv');
-?>
 <article>
     <div class="resume">
         <div class="resume_up">
@@ -181,17 +173,3 @@
         <button><a href="Files\NOURELAYNE.Salah-eddine.CV.pdf" download>Cliquez-ici</a></button>
     </div>
 </article>
-<?php
-   require_once('template_footer.php');
-?>
-<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-<script>
-    $(document).ready(function() {
-        $('.menu').click(function() {
-            $('ul').toggleClass('active');
-        })
-    })
-</script>
-</body>
-
-</html>
