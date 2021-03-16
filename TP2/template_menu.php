@@ -1,11 +1,11 @@
 
         <?php
-        function renderMenuToHTML($currentPageId)
+        function renderMenuToHTML($currentPageId, $lang)
         {
             $mymenu = array(
-                'index' => array('accueil', 'Accueil'),
-                'cv' => array('cv', 'CV' ),
-                'projects' => array('projects', 'Projets')
+                'accueil' => array('Accueil', 'Home'),
+                'cv' => array('CV', 'CV'),
+                'projects' => array('Projets', "Projects")
             );
             echo "
                 <nav>
@@ -17,10 +17,13 @@
             ";
             foreach ($mymenu as $pageId => $pageParameters) {
                 if ($currentPageId === $pageId) {
-                    echo "<li id=\"currentpage\"><a href=\"index.php?page={$pageParameters[0]}\">{$pageParameters[1]}</a></li>";
+                    echo "<li id=\"currentpage\"><a href=\"index.php?page=$pageId&lang=$lang\">";
+                    echo ($lang === "fr" ? $pageParameters[0] : $pageParameters[1]);
                 } else {
-                    echo "<li><a href=\"index.php?page={$pageParameters[0]}\">{$pageParameters[1]}</a></li>";
+                    echo "<li><a href=\"index.php?page=$pageId&lang=$lang\">";
+                    echo ($lang === "fr" ? $pageParameters[0] : $pageParameters[1]);
                 }
+                echo "</a></li>";
             }
             echo "
                     </ul>

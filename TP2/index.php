@@ -2,17 +2,19 @@
     require_once("template_header.php");
     require_once("template_menu.php");
     $currentPageId = 'accueil';
-    if (isset($_GET['page'])) {
+    $lang = 'fr';
+    if (isset($_GET['page']) && isset($_GET['lang'])) {
         $currentPageId = $_GET['page'];
+        $lang = $_GET['lang'];
     }
 ?>
 
 <?php
-    renderMenuToHTML($currentPageId);
+    renderMenuToHTML($currentPageId, $lang);
 ?>
 
 <?php
-    $pageToInclude = $currentPageId . ".php";
+    $pageToInclude = "{$lang}\\".$currentPageId.".php";
     if (is_readable($pageToInclude))
         require_once($pageToInclude);
     else
@@ -20,7 +22,7 @@
     ?>
 
 <?php
-    require_once("template_footer.php");
+    require_once("{$lang}\\template_footer.php");
 ?>
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 <script>

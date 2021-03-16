@@ -169,7 +169,7 @@
         </div>
     </div>
     <div class="download">
-        <p>Télécharger mon CV</p>
+        <p>Télécharger le CV</p>
         <button><a href="Files\NOURELAYNE.Salah-eddine.CV.pdf" download>Cliquez-ici</a></button>
     </div>
 </article>
