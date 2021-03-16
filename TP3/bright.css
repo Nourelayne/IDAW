@@ -1,0 +1,17 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+}
+
+.body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#login_form{
+    margin: 200px auto;
+    width: 30%;
+}
+

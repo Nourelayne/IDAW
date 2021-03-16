@@ -1,8 +1,11 @@
 <?php
     // on simule une base de données
     $users = array(
-        'riri' => 'fifi',
-        'yoda' => 'maitrejedi' 
+        'nour@gmail.com' => 'coco',
+    );
+
+    $names = array(
+        'nour@gmail.com' => 'Nourelayne'
     );
 
     $login = "anonymous";
@@ -15,7 +18,7 @@
         // si login existe et password correspond
         if( array_key_exists($tryLogin,$users) && $users[$tryLogin]==$tryPwd ) {
             $successfullyLogged = true;
-            $login = $tryLogin;
+            $login = $names[$tryLogin];
         } else
            $errorText = "Erreur de login/password";
     } else

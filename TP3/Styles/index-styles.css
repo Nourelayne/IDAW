@@ -1,0 +1,25 @@
+article{
+  margin-top: 100px;
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 50px auto;
+    height: 300px;
+    z-index: -1;
+}
+
+.main{
+    font-size: 15vw;
+    background-image: linear-gradient(45deg,#F64C72, #99738E);
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+}
+
+.sub{
+    font-size: 5vw;
+    color: #2F2FA2;
+}
