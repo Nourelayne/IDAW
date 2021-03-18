@@ -7,26 +7,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="bright.css"/>
     <link rel="stylesheet" href = "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script
+        src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+        crossorigin="anonymous">
+    </script>
     <title>TP3</title>
-
     <?php
+        $mode = "Bright";
+        setcookie('mode', $mode);
+
         if (isset($_GET['theme'])) {
             $mode = $_GET['theme'];
-            setcookie('style', $mode);
+            setcookie('mode', $mode);
         }
-
-        if($_COOKIE['style'] === "Dark"){
-            $mode = "Dark";
-            $link = "<link rel=\"stylesheet\" href=\"dark.css\"/>";
-            echo $link;
+    
+        if($_COOKIE['mode'] === "Dark"){
+            echo "<link rel=\"stylesheet\" href=\"dark.css\"/>";
         }
         else{
-            $link = "<link rel=\"stylesheet\" href=\"bright.css\"/>";
-            echo $link;
+            echo "<link rel=\"stylesheet\" href=\"bright.css\"/>";
         }
     ?>
-
 </head>
 
 <body class="body">
@@ -40,7 +42,7 @@
                 <input type="submit" value="Apply"/>
         </form>
     </nav>
-    <form id="login_form" action="connected.php" method="POST">
+    <form id="login_form"  action="connected.php" method="POST">
         <div class="form-group">
             <label for="exampleInputEmail1">Email address</label>
             <input type="email" name= "login" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
@@ -50,11 +52,29 @@
             <label for="exampleInputPassword1">Password</label>
             <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
         </div>
+        <p class="alertMessage"></p>
         <div class="form-check">
             <input type="checkbox" class="form-check-input" id="exampleCheck1">
             <label class="form-check-label" for="exampleCheck1">Check me out</label>
         </div>
-        <input type="submit" value="Se connecter" class="btn btn-primary"/>
+    
+        <input id = "submitButton" type="submit" value="Se connecter" class="btn btn-primary"/>
     </form>
+
+    <script>
+        $(document).ready(function() {
+            $("#login_form").submit(function(e){
+                 var login = $("#exampleInputEmail1").val();
+                 var password = $("#exampleInputPassword1").val();
+                 if(login == "" || password == ""){
+                       event.preventDefault();
+                       $("#exampleInputEmail1").css("border-color","red");
+                       $("#exampleInputPassword1").css("border-color","red");
+                       $(".alertMessage").html("Please Enter a valid login and password");
+                       $(".alertMessage").css("color","red");
+                 }
+            });
+        });
+    </script>
 </body>
 </html>
