@@ -14,20 +14,18 @@
     </script>
     <title>TP3</title>
     <?php
-        $mode = "Bright";
-        setcookie('mode', $mode);
+        $mode = "bright";
+
+        if(isset($_COOKIE['mode'])){
+            $mode = $_COOKIE['mode'];
+        }
 
         if (isset($_GET['theme'])) {
             $mode = $_GET['theme'];
             setcookie('mode', $mode);
         }
     
-        if($_COOKIE['mode'] === "Dark"){
-            echo "<link rel=\"stylesheet\" href=\"dark.css\"/>";
-        }
-        else{
-            echo "<link rel=\"stylesheet\" href=\"bright.css\"/>";
-        }
+        echo "<link rel=\"stylesheet\" href=\"$mode.css\"/>";
     ?>
 </head>
 
@@ -36,13 +34,13 @@
         <a class="navbar-brand">TP-3</a>
         <form id="style_form" action="login.php" method="GET">
                 <select name="theme">
-                    <option value="Bright">Bright</option>
-                    <option value="Dark">Dark</option>
+                    <option value="bright">Bright</option>
+                    <option value="dark">Dark</option>
                 </select>
                 <input type="submit" value="Apply"/>
         </form>
     </nav>
-    <form id="login_form"  action="connected.php" method="POST">
+    <form id="form"  action="connected.php" method="POST">
         <div class="form-group">
             <label for="exampleInputEmail1">Email address</label>
             <input type="email" name= "login" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
@@ -57,13 +55,13 @@
             <input type="checkbox" class="form-check-input" id="exampleCheck1">
             <label class="form-check-label" for="exampleCheck1">Check me out</label>
         </div>
-    
+        <br>
         <input id = "submitButton" type="submit" value="Se connecter" class="btn btn-primary"/>
     </form>
 
     <script>
         $(document).ready(function() {
-            $("#login_form").submit(function(e){
+            $("#form").submit(function(e){
                  var login = $("#exampleInputEmail1").val();
                  var password = $("#exampleInputPassword1").val();
                  if(login == "" || password == ""){

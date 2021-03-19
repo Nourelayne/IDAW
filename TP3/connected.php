@@ -30,4 +30,6 @@
         echo "<h1>Bienvenu ".$_SESSION['login']."</h1>";
         echo "<a href=\"logout.php\">Se déconnecter</a>";
     } 
+
+    $conn->close();
 ?>

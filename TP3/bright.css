@@ -10,10 +10,16 @@
     justify-content: center;
 }
 
-#login_form{
-    margin: auto;
+#form{
+    margin: 150px auto;
     width: 30%;
-    border: 1px solid black;
 }
+
+.submit_buttons{
+    display: flex;
+    flex-direction: row;
+}
+
+
 
 
