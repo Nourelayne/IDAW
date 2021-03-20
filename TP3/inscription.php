@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="bright.css"/>
     <link rel="stylesheet" href = "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script
         src="https://code.jquery.com/jquery-3.6.0.js"
@@ -14,34 +13,43 @@
     </script>
     <title>Inscription</title>
 
-    <?php
-        $mode = "Bright";
-        setcookie('mode', $mode);
+        <?php
+            $mode = "bright";
 
-        if (isset($_GET['theme'])) {
-            $mode = $_GET['theme'];
-            setcookie('mode', $mode);
-        }
-    
-        if($_COOKIE['mode'] === "Dark"){
-            echo "<link rel=\"stylesheet\" href=\"dark.css\"/>";
-        }
-        else{
-            echo "<link rel=\"stylesheet\" href=\"bright.css\"/>";
-        }
-    ?>
+            if(isset($_COOKIE['mode'])){
+                $mode = $_COOKIE['mode'];
+            }
+
+            if (isset($_POST['app'])) {
+                $mode = $_POST['app'];
+                setcookie('mode', $mode);
+            }
+        
+            echo "<link rel=\"stylesheet\" href=\"$mode.css\"/>";
+        ?>
 
 </head>
 
 <body class="body">
     <nav class="navbar navbar-light bg-light justify-content-between">
         <a class="navbar-brand">TP-3</a>
-        <form id="style_form" action="inscription.php" method="GET">
-                <select name="theme">
-                    <option value="Bright">Bright</option>
-                    <option value="Dark">Dark</option>
-                </select>
-                <input type="submit" value="Apply"/>
+        <form id="style_form" action="login.php" method="POST">
+            <div class="radiogroup">
+                <div class="wrapper">
+                    <input class="state" type="radio" name="app" id="bright" value="bright">
+                    <label class="label" for="bright">
+                        <div class="indicator"></div>
+                        <span class="text">Bright</span>
+                    </label>
+                </div>
+                <div class="wrapper">
+                    <input class="state" type="radio" name="app" id="dark" value="dark">
+                    <label class="label" for="dark">
+                    <div class="indicator"></div>
+                    <span class="text">Dark</span>
+                    </label>
+                </div>
+            </div>
         </form>
     </nav>
     <form id="form" action= "inscription.php" method="POST">
@@ -89,7 +97,9 @@
     ?>
         <div class ="submit_buttons">
             <button type="submit" class="btn btn-primary">Sign in</button>
-            <a href="login.php">Se connecter</a>
+            <form action="login.php">
+                <button type="submit" class="btn btn-primary">Se connecter</button>
+            </form>
         </div>
     </form>"
 
@@ -107,6 +117,9 @@
                        $(".alertMessage").html("Please Enter a valid login and password and pseudo");
                        $(".alertMessage").css("color","red");
                  }
+            });
+            $('input[name=app]').change(function(){
+                    $('#style_form').submit();
             });
         });
     </script>

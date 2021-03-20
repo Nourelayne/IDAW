@@ -13,31 +13,42 @@
         crossorigin="anonymous">
     </script>
     <title>TP3</title>
-    <?php
-        $mode = "bright";
+        <?php
+            $mode = "bright";
 
-        if(isset($_COOKIE['mode'])){
-            $mode = $_COOKIE['mode'];
-        }
+            if(isset($_COOKIE['mode'])){
+                $mode = $_COOKIE['mode'];
+            }
 
-        if (isset($_GET['theme'])) {
-            $mode = $_GET['theme'];
-            setcookie('mode', $mode);
-        }
-    
-        echo "<link rel=\"stylesheet\" href=\"$mode.css\"/>";
-    ?>
+            if (isset($_POST['app'])) {
+                $mode = $_POST['app'];
+                setcookie('mode', $mode);
+            }
+        
+            echo "<link rel=\"stylesheet\" href=\"$mode.css\"/>";
+        ?>
 </head>
 
 <body class="body">
     <nav class="navbar navbar-light bg-light justify-content-between">
         <a class="navbar-brand">TP-3</a>
-        <form id="style_form" action="login.php" method="GET">
-                <select name="theme">
-                    <option value="bright">Bright</option>
-                    <option value="dark">Dark</option>
-                </select>
-                <input type="submit" value="Apply"/>
+        <form id="style_form" action="login.php" method="POST">
+            <div class="radiogroup">
+                <div class="wrapper">
+                    <input class="state" type="radio" name="app" id="bright" value="bright">
+                    <label class="label" for="bright">
+                        <div class="indicator"></div>
+                        <span class="text">Bright</span>
+                    </label>
+                </div>
+                <div class="wrapper">
+                    <input class="state" type="radio" name="app" id="dark" value="dark">
+                    <label class="label" for="dark">
+                    <div class="indicator"></div>
+                    <span class="text">Dark</span>
+                    </label>
+                </div>
+            </div>
         </form>
     </nav>
     <form id="form"  action="connected.php" method="POST">
@@ -60,17 +71,9 @@
     </form>
 
     <script>
-        $(document).ready(function() {
-            $("#form").submit(function(e){
-                 var login = $("#exampleInputEmail1").val();
-                 var password = $("#exampleInputPassword1").val();
-                 if(login == "" || password == ""){
-                       event.preventDefault();
-                       $("#exampleInputEmail1").css("border-color","red");
-                       $("#exampleInputPassword1").css("border-color","red");
-                       $(".alertMessage").html("Please Enter a valid login and password");
-                       $(".alertMessage").css("color","red");
-                 }
+        $(document).ready(function() { 
+            $('input[name=app]').change(function(){
+                    $('#style_form').submit();
             });
         });
     </script>
