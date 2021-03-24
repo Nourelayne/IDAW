@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css"/>
+    <link rel="stylesheet" href = "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="app.js"></script>
+    <title>TP3</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-light bg-light justify-content-between">
+        <a class="navbar-brand">TP-3</a>
+    </nav>
+    <div class="wrapper">
+            <div class="form-wrapper">
+                <form onsubmit="onFormSubmit();" autocomplete="off">
+                    <div class="mb-3">
+                        <label for="nom" class="form-label">Nom</label>
+                        <input type="text" class="form-control" id="nom" placeholder="Nom">
+                        <span id ="error"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label for="prenom" class="form-label">Prenom</label>
+                        <input type="text" class="form-control" id="prenom" placeholder="Prenom">
+                    </div>
+                    <div class="mb-3">
+                        <label for="date" class="form-label">Date</label>
+                        <input type="date" class="form-control" id="date" placeholder="dd/mm/yyyy">
+                    </div>
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="check">
+                        <label class="form-check-label" for="check">Adore le cours</label>
+                    </div>
+                    <div class="mb-3">
+                        <label for="note" class="form-label">Remarque</label>
+                        <textarea class="form-control" id="note" rows="3" placeholder="Remarque"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        <div class="table-wrapper">
+            <table class="table">
+                <thead class="table-dark">
+                    <tr>
+                        <th scope="col">Nom * </th>
+                        <th scope="col">Prenom</th>
+                        <th scope="col">Date de naissance</th>
+                        <th scope="col">Adore le cours</th>
+                        <th scope="col">Remarque</th>
+                        <th scope="col">CRUD</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!--<script>
+        function onFormSubmit() {
+            event.preventDefault();
+            let nom = document.querySelector('#nom');
+            let prenom = document.querySelector('#prenom');
+            let date = document.querySelector('#date');
+            let check = document.querySelector('#check');
+            let note = document.querySelector('#note');
+            let table = document.querySelector('.table');
+            let error = document.querySelector('#error');
+            if(nom.value === ""){
+                nom.style.borderColor = "red";
+                error.innerHTML = "Veuillez entrer votre nom";
+                error.style.color = "red";
+            }
+            else{
+                let template = `
+                                    <tr>
+                                        <td>${nom.value}</td>
+                                        <td>${prenom.value}</td>
+                                        <td>${date.value}</td>
+                                        <td>${check.value}</td>
+                                        <td>${note.value}</td>
+                                        <td>
+                                            <a href="#">Edit</a>
+                                            <a href="#">Delete</a>
+                                        </td>
+                                    </tr>
+                                `
+                table.innerHTML += template;
+                nom.value = "";
+                prenom.value = "";
+                date.value = "";
+                note.value = "";
+                nom.style.borderColor = null;
+                error.innerHTML = "";
+                error.style.color = null;
+            }
+        }
+    </script>-->
+</body>
+</html>
