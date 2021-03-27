@@ -8,6 +8,11 @@
     <link rel="stylesheet" href="styles.css"/>
     <link rel="stylesheet" href = "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="app.js"></script>
+    <script
+        src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+        crossorigin="anonymous">
+    </script>
     <title>TP3</title>
 </head>
 
@@ -59,45 +64,5 @@
             </table>
         </div>
     </div>
-    <!--<script>
-        function onFormSubmit() {
-            event.preventDefault();
-            let nom = document.querySelector('#nom');
-            let prenom = document.querySelector('#prenom');
-            let date = document.querySelector('#date');
-            let check = document.querySelector('#check');
-            let note = document.querySelector('#note');
-            let table = document.querySelector('.table');
-            let error = document.querySelector('#error');
-            if(nom.value === ""){
-                nom.style.borderColor = "red";
-                error.innerHTML = "Veuillez entrer votre nom";
-                error.style.color = "red";
-            }
-            else{
-                let template = `
-                                    <tr>
-                                        <td>${nom.value}</td>
-                                        <td>${prenom.value}</td>
-                                        <td>${date.value}</td>
-                                        <td>${check.value}</td>
-                                        <td>${note.value}</td>
-                                        <td>
-                                            <a href="#">Edit</a>
-                                            <a href="#">Delete</a>
-                                        </td>
-                                    </tr>
-                                `
-                table.innerHTML += template;
-                nom.value = "";
-                prenom.value = "";
-                date.value = "";
-                note.value = "";
-                nom.style.borderColor = null;
-                error.innerHTML = "";
-                error.style.color = null;
-            }
-        }
-    </script>-->
 </body>
 </html>
