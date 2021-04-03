@@ -4,7 +4,7 @@
                 $dbco = new PDO("mysql:host=$servname;dbname=$dbname;charset=utf8", $user, $pass);
                 $dbco->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-                $query1 = "INSERT INTO aliment (libelle_aliment) VALUES('$_POST[nom]')";
+                $query1 = "INSERT INTO aliment (id_aliment, libelle_aliment) VALUES('$_POST[id]', '$_POST[nom]')";
                 $dbco -> exec($query1);
                 
 
@@ -17,7 +17,7 @@
                 ((SELECT id_aliment FROM aliment WHERE libelle_aliment ='$_POST[nom]'), 4, '$_POST[lipides]'), 
                 ((SELECT id_aliment FROM aliment WHERE libelle_aliment ='$_POST[nom]'), 5, '$_POST[sucres]'), 
                 ((SELECT id_aliment FROM aliment WHERE libelle_aliment ='$_POST[nom]'), 6, '$_POST[alcool]'), 
-                ((SELECT id_aliment FROM aliment WHERE libelle_aliment ='$_POST[nom]'), 7, '$_POST[sodium]');
+                ((SELECT id_aliment FROM aliment WHERE libelle_aliment ='$_POST[nom]'), 7, '$_POST[sodium]'),
                 ((SELECT id_aliment FROM aliment WHERE libelle_aliment ='$_POST[nom]'), 8, '$_POST[eau]');
                 ";
                 
