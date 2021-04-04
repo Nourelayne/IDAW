@@ -5,7 +5,6 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <script src="js\app.js"></script>
   <link rel="stylesheet" href="Styles\loginStyles.css" />
   <title>Login</title>
   <script>
@@ -13,13 +12,13 @@
       const signInButton = document.getElementById('signIn');
       const container = document.getElementById('container');
 
-      signUpButton.addEventListener('click', () => {
+      /*signUpButton.addEventListener('click', () => {
         container.classList.add("right-panel-active");
       });
 
       signInButton.addEventListener('click', () => {
         container.classList.remove("right-panel-active");
-      });
+      });*/
   </script>
 </head>
 
@@ -38,10 +37,10 @@
       </form>
     </div>
     <div class="form-container sign-in-container">
-      <form action="#">
+      <form action="\IDAW\Projet_IMM\BackEnd\connexionTest.php" method="POST">
         <h1>Sign in</h1>
-        <input type="email" placeholder="Email" />
-        <input type="password" placeholder="Password" />
+        <input type="email" placeholder="Login" name="login"/>
+        <input type="password" placeholder="Password" name="password" />
         <button id="signIn">Sign In</button>
       </form>
     </div>

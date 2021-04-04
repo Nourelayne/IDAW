@@ -7,6 +7,8 @@
     </title>
     <link rel="stylesheet" href="Styles\styles.css"/>
     <link rel="stylesheet" href="Styles\alimentsStyle.css">
+    <link rel="stylesheet" href="Styles\profileStyle.css">
+    <link rel="stylesheet" href="Styles\logoutStyle.css">
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" 
     integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
