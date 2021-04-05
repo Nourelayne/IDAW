@@ -9,7 +9,7 @@
                     </select>
                 </div>
                 <div class="col-md-4">
-                    <label>Quantité en gramme</label>
+                    <label>Quantité en Kilogramme</label>
                     <input type="text" class="form-control" name="quantite" id="quantite">
                 </div>
                 <div class="col-md-4">
@@ -17,7 +17,7 @@
                     <input type="text" class="form-control" name="date" id="date">
                 </div>
             </div>
-            <button class="btn btn-primary" type="submit" style="text-align: center;">Submit</button>
+            <button class="btn btn-success" type="submit" id="submitButtonJournal">Submit</button>
         </form>
         <div class="table-wrapper">
             <div class="table-title">
@@ -31,7 +31,7 @@
                 <thead>
                     <tr>
                         <th>Nom Aliment</th>
-                        <th>Quantité en gramme</th>
+                        <th>Quantité en Kilogramme</th>
                         <th>Date</th>
                         <th>Actions</th>
                     </tr>

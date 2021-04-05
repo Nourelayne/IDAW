@@ -1,7 +1,7 @@
 <?php
     require_once("template_header.php");
     require_once("template_menu.php");
-    $currentPageId = 'profil';
+    $currentPageId = 'login';
 
     if (isset($_GET['page'])) {
         $currentPageId = $_GET['page'];
@@ -12,7 +12,6 @@
     renderMenuToHTML($currentPageId);
 ?>
 
-<h1><?php  echo $currentPageId ?></h1>
 <?php
     $pageToInclude = "$currentPageId.php";
     if (is_readable($pageToInclude))

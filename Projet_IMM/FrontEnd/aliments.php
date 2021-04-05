@@ -1,78 +1,76 @@
 <article>
-    <div class="container">
-        <form onsubmit="onFormSubmit()" method="POST">
-            <div class="form-row">
-                <div class="col-md-4">
-                    <label>Nom</label>
-                    <input type="text" class="form-control" id="nom" name="nom" required>
-                </div>
-                <div class="col-md-4">
-                    <label>Energie (kJ/100 g)</label>
-                    <input type="text" class="form-control" name="energie" id="energie">
-                </div>
-                <div class="col-md-4">
-                    <label>Protéines (g/100 g)</label>
-                    <input type="text" class="form-control" name="protéines" id="protéines">
-                </div>
+    <form onsubmit="onFormSubmit()" method="POST" >
+        <div class="form-row">
+            <div class="col-md-4">
+                <label>Nom</label>
+                <input type="text" class="form-control" id="nom" name="nom" required>
             </div>
-            <div class="form-row">
-                <div class="col-md-4">
-                    <label>Glucides (g/100 g)</label>
-                    <input type="text" class="form-control" name="glucides" id="glucides">
-                </div>
-                <div class="col-md-4">
-                    <label>Lipides (g/100 g)</label>
-                    <input type="text" class="form-control" name="lipides" id="lipides">
-                </div>
-                <div class="col-md-4">
-                    <label>Sucres (g/100 g)</label>
-                    <input type="text" class="form-control" name="sucres" id="sucres">
-                </div>
+            <div class="col-md-4">
+                <label>Energie (kJ/100 g)</label>
+                <input type="text" class="form-control" name="energie" id="energie">
             </div>
-            <div class="form-row">
-                <div class="col-md-4">
-                    <label>Alcool (g/100 g)</label>
-                    <input type="text" class="form-control" name="alcool" id="alcool">
-                </div>
-                <div class="col-md-4">
-                    <label>Sodium (mg/100 g)</label>
-                    <input type="text" class="form-control" name="sodium" id="sodium">
-                </div>
-                <div class="col-md-4">
-                    <label>Eau (g/100 g)</label>
-                    <input type="text" class="form-control" name="eau" id="eau">
-                </div>
+            <div class="col-md-4">
+                <label>Protéines (g/100 g)</label>
+                <input type="text" class="form-control" name="protéines" id="protéines">
             </div>
-            <button class="btn btn-primary" type="submit" style="text-align: center;">Submit</button>
-        </form>
-        <div class="table-wrapper">
-            <div class="table-title">
-                <div class="row">
-                    <div class="col-sm-6">
-                        <h2><b>Gestion d'Aliments</b></h2>
-                    </div>
-                </div>
-            </div>
-            <table class="table table-striped table-hover" id="table-content">
-                <thead>
-                    <tr>
-                        <th>Nom Aliment</th>
-                        <th>Energie (kJ/100 g)</th>
-                        <th>Protéines (g/100 g)</th>
-                        <th>Glucides (g/100 g)</th>
-                        <th>Lipides (g/100 g)</th>
-                        <th>Sucres (g/100 g)</th>
-                        <th>Alcool (g/100 g)</th>
-                        <th>Sodium (mg/100 g)</th>
-                        <th>Eau (g/100 g)</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-
-                </tbody>
-            </table>
         </div>
+        <div class="form-row">
+            <div class="col-md-4">
+                <label>Glucides (g/100 g)</label>
+                <input type="text" class="form-control" name="glucides" id="glucides">
+            </div>
+            <div class="col-md-4">
+                <label>Lipides (g/100 g)</label>
+                <input type="text" class="form-control" name="lipides" id="lipides">
+            </div>
+            <div class="col-md-4">
+                <label>Sucres (g/100 g)</label>
+                <input type="text" class="form-control" name="sucres" id="sucres">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="col-md-4">
+                <label>Alcool (g/100 g)</label>
+                <input type="text" class="form-control" name="alcool" id="alcool">
+            </div>
+            <div class="col-md-4">
+                <label>Sodium (mg/100 g)</label>
+                <input type="text" class="form-control" name="sodium" id="sodium">
+            </div>
+            <div class="col-md-4">
+                <label>Eau (g/100 g)</label>
+                <input type="text" class="form-control" name="eau" id="eau">
+            </div>
+        </div>
+        <button class="btn btn-success" type="submit" id="submitButtonAliment">Submit</button>
+    </form>
+    <div class="table-wrapper">
+        <div class="table-title">
+            <div class="row">
+                <div class="col-sm-6">
+                    <h2><b>Gestion d'Aliments</b></h2>
+                </div>
+            </div>
+        </div>
+        <table class="table table-striped table-hover" id="table-content">
+            <thead>
+                <tr>
+                    <th>Nom Aliment</th>
+                    <th>Energie (kJ/100 g)</th>
+                    <th>Protéines (g/100 g)</th>
+                    <th>Glucides (g/100 g)</th>
+                    <th>Lipides (g/100 g)</th>
+                    <th>Sucres (g/100 g)</th>
+                    <th>Alcool (g/100 g)</th>
+                    <th>Sodium (mg/100 g)</th>
+                    <th>Eau (g/100 g)</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
     </div>
     <script>
         let alimentMaxId = 1;
@@ -97,12 +95,11 @@
                     aliment.sodium = a.sodium;
                     aliment.eau = a.eau;
                     appendTable(aliment);
-                    
                 });
             });
         });
 
-        function appendTable(newAliment){
+        function appendTable(newAliment) {
             $("#table-content").append(`  <tr> 
                         <td> ${newAliment.nom}  </td> <td> 
                         ${newAliment.energie}  </td> <td> 
@@ -131,13 +128,13 @@
             })
         }
 
-        function ajaxUpdateAliment(aliment){
-                $.ajax({
-                        url: backendURL+"updateAliment.php",
-                        method: "POST",
-                        dataType : "json",
-                        data : aliment
-                    })
+        function ajaxUpdateAliment(aliment) {
+            $.ajax({
+                url: backendURL + "updateAliment.php",
+                method: "POST",
+                dataType: "json",
+                data: aliment
+            })
         }
 
         function ajaxDeleteAliment(id) {
@@ -165,7 +162,7 @@
 
         function readInputs() {
             let newAliment = {};
-            edited ? newAliment.id = selectedRow.rowIndex : newAliment.id =  alimentMaxId;
+            edited ? newAliment.id = selectedRow.rowIndex : newAliment.id = alimentMaxId;
             newAliment.nom = $("#nom").val();
             newAliment.energie = $("#energie").val();
             newAliment.protéines = $("#protéines").val();
@@ -181,19 +178,19 @@
         function onFormSubmit() {
             event.preventDefault();
             let aliment = readInputs();
-            if(!edited){
-                    appendTable(aliment);
-                    ajaxAddAliment(aliment);
-                    clearFields();
-            }else{
-                    aliments.splice(selectedRow.rowIndex-1, 1, aliment);
-                    saveAliment(aliment);
-                    clearFields();
+            if (!edited) {
+                appendTable(aliment);
+                ajaxAddAliment(aliment);
+                clearFields();
+            } else {
+                aliments.splice(selectedRow.rowIndex - 1, 1, aliment);
+                saveAliment(aliment);
+                clearFields();
             }
         }
 
         function remove(id) {
-            if (confirm("êtes-vous sure de vouloir supprimer cet enregistrement?")){
+            if (confirm("êtes-vous sure de vouloir supprimer cet enregistrement?")) {
                 ajaxDeleteAliment(id);
                 alimentMaxId = alimentMaxId - 1;
                 event.target.closest("tr").remove();
@@ -204,16 +201,16 @@
         function edit(id) {
             edited = true;
             selectedRow = event.target.closest("tr");
-            $("#nom").val(aliments[id -1].nom);
-            $("#nom").attr('disabled','disabled');
-            $("#energie").val(aliments[id -1].energie);
-            $("#protéines").val(aliments[id -1].protéines);
-            $("#glucides").val(aliments[id -1].glucides);
-            $("#lipides").val(aliments[id -1].lipides);
-            $("#sucres").val(aliments[id -1].sucres);
-            $("#alcool").val(aliments[id -1].alcool);
-            $("#sodium").val(aliments[id -1].sodium);
-            $("#eau").val(aliments[id -1].eau);
+            $("#nom").val(aliments[id - 1].nom);
+            $("#nom").attr('disabled', 'disabled');
+            $("#energie").val(aliments[id - 1].energie);
+            $("#protéines").val(aliments[id - 1].protéines);
+            $("#glucides").val(aliments[id - 1].glucides);
+            $("#lipides").val(aliments[id - 1].lipides);
+            $("#sucres").val(aliments[id - 1].sucres);
+            $("#alcool").val(aliments[id - 1].alcool);
+            $("#sodium").val(aliments[id - 1].sodium);
+            $("#eau").val(aliments[id - 1].eau);
         }
 
         function saveAliment(aliment) {

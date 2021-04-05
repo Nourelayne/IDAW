@@ -5,12 +5,12 @@
                 $dbco = new PDO("mysql:host=$servname;dbname=$dbname;charset=utf8", $user, $pass);
                 $dbco->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-                $infosUtilisateur = $dbco->prepare("SELECT * FROM utilisateur 
+                $query = $dbco->prepare("SELECT * FROM utilisateur 
                            WHERE login = '$_SESSION[login]';");
-                $infosUtilisateur->execute();
+                $query->execute();
 
-                $resultatInfosUtilisateur = $infosUtilisateur->fetchAll(PDO::FETCH_ASSOC);
-                echo json_encode($resultatInfosUtilisateur);
+                $resultat = $query->fetchAll(PDO::FETCH_ASSOC);
+                echo json_encode($resultat);
             }
             
             catch(PDOException $e){

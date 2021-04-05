@@ -1,26 +1,10 @@
-body {
-    color: #797979;
-    background: #f1f2f7;
-    font-family: 'Open Sans', sans-serif;
-    padding: 0px !important;
-    margin: 0px !important;
-    font-size: 13px;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -moz-font-smoothing: antialiased;
-}
-
-.profile-nav, .profile-info{
-    margin-top:30px;   
-}
-
 .profile-info .panel, .profile-nav .user-heading{
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 
 .profile-nav .user-heading {
     background: linear-gradient(45deg, #56ab2f, #a8e063);
-    height: 510px;
+    height: 450px;
     color: #fff;
     border-radius: 4px;
     -webkit-border-radius: 4px;
@@ -93,3 +77,4 @@ body {
     color: #89817e;
     margin-left: 20px;
 }
+

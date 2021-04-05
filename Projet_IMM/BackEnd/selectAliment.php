@@ -6,7 +6,7 @@
                 $dbco->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                 
 
-                $infosAliments = $dbco->prepare("SELECT libelle_aliment AS nom, En.Ratio AS energie, Pro.ratio AS protéines, Glu.Ratio As glucides, Lip.Ratio As lipides, Suc.Ratio As sucres, Alc.Ratio As alcool, Sod.Ratio As sodium, Eau.Ratio As eau FROM `aliment` 
+                $query = $dbco->prepare("SELECT libelle_aliment AS nom, En.Ratio AS energie, Pro.ratio AS protéines, Glu.Ratio As glucides, Lip.Ratio As lipides, Suc.Ratio As sucres, Alc.Ratio As alcool, Sod.Ratio As sodium, Eau.Ratio As eau FROM `aliment` 
                 LEFT JOIN contenir AS En ON aliment.id_aliment = En.id_aliment AND En.id_apport=1 
                 LEFT JOIN contenir AS Pro ON aliment.id_aliment = Pro.id_aliment AND Pro.id_apport=2
                 LEFT JOIN contenir AS Glu ON aliment.id_aliment = Glu.id_aliment AND Glu.id_apport=3
@@ -15,11 +15,11 @@
                 LEFT JOIN contenir AS Alc ON aliment.id_aliment = Alc.id_aliment AND Alc.id_apport=6
                 LEFT JOIN contenir AS Sod ON aliment.id_aliment = Sod.id_aliment AND Sod.id_apport=7
                 LEFT JOIN contenir AS Eau ON aliment.id_aliment = Eau.id_aliment AND Eau.id_apport=8;");
-                $infosAliments->execute();
+                $query->execute();
                 
 
-                $resultatinfosAliments = $infosAliments->fetchAll(PDO::FETCH_ASSOC);
-                echo json_encode($resultatinfosAliments);
+                $resultat = $query->fetchAll(PDO::FETCH_ASSOC);
+                echo json_encode($resultat);
             }
             catch(PDOException $e){
                 echo "Erreur : " . $e->getMessage();
@@ -27,5 +27,3 @@
 
             
 ?>
-
-
